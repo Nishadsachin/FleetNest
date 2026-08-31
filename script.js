@@ -1,5 +1,13 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
+const siteHeader = document.querySelector('[data-header]');
+
+function updateHeader() {
+  siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+}
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
 
 function setMobileMenu(open) {
   if (!menuToggle || !mobileNav) return;
